@@ -4,7 +4,18 @@
   "description": "Jack Krone's portfolio and blog.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "scriptsComments": {
+    "note": "scripts were obtained from another project initialized with `npm init gatsby`",
+    "commenting": "I used the answer by gkond on the following SO page to structure my commments",
+    "page": "https://stackoverflow.com/questions/14221579/how-do-i-add-comments-to-package-json-for-npm-install"
   },
   "repository": {
     "type": "git",
