@@ -1,0 +1,50 @@
+{
+  // Resources on setting up eslint for this project:
+    // Best for future problem resolution: https://andrebnassis.medium.com/setting-eslint-on-a-react-typescript-project-2021-1190a43ffba
+    // Different perspective on set up: https://blog.logrocket.com/linting-typescript-using-eslint-and-prettier/
+      // I created this file with `npx eslint --init` as recommended above
+    // ESLint with Prettier: https://javascript.plainenglish.io/setting-eslint-and-prettier-on-a-react-typescript-project-2021-22993565edf9
+  // Consider addition of .eslintignore at some point in future
+
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    // docs on first three configs: https://www.npmjs.com/package/@typescript-eslint/eslint-plugin
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+
+    "airbnb", // includes/requires eslint, plugin:import, plugin:react, plugin:react-hooks, plugin:jsx-a11y (resource: https://www.npmjs.com/package/eslint-config-airbnb)
+    "airbnb/hooks" // using this in place of react-hooks plugin configuration
+    // "airbnb-typescript": another possible option but has issue with peer dependencies (resource: https://www.npmjs.com/package/eslint-config-airbnb-typescript)
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": "./tsconfig.json" // This needed to be added manually for proper functioning
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    // following 4 lines resolve competing rules from eslint and @typescript-eslint
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-unused-vars": "off", 
+    "@typescript-eslint/no-unused-vars": ["error"], // may also be useful to set to "warn"
+
+    // prevents message regarding missing file extension on import statement:
+    "import/extensions": [ "error", "ignorePackages", { "ts": "never", "tsx": "never" } ],
+
+    "react/prop-types": "off",
+    // allows jsx in .tsx files:
+    "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ]
+  }
+}
