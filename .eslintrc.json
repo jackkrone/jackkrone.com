@@ -4,7 +4,7 @@
     // Different perspective on set up: https://blog.logrocket.com/linting-typescript-using-eslint-and-prettier/
       // I created this file with `npx eslint --init` as recommended above
     // ESLint with Prettier: https://javascript.plainenglish.io/setting-eslint-and-prettier-on-a-react-typescript-project-2021-22993565edf9
-  // Consider addition of .eslintignore at some point in future
+      // this is a key resource that shows how to enable eslint to use prettiers rules instead of its own
 
   "env": {
     "browser": true,
@@ -17,8 +17,13 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
 
     "airbnb", // includes/requires eslint, plugin:import, plugin:react, plugin:react-hooks, plugin:jsx-a11y (resource: https://www.npmjs.com/package/eslint-config-airbnb)
-    "airbnb/hooks" // using this in place of react-hooks plugin configuration
+    "airbnb/hooks", // using this in place of react-hooks plugin configuration
     // "airbnb-typescript": another possible option but has issue with peer dependencies (resource: https://www.npmjs.com/package/eslint-config-airbnb-typescript)
+
+    // ESLint with prettier resource (commented on line 6) for following 5 lines:
+    // Update: many of the "5 lines" were merged into 1: https://github.com/prettier/eslint-config-prettier/blob/main/CHANGELOG.md#version-800-2021-02-21
+    "prettier/prettier",
+    "plugin:prettier/recommended" // runs prettier within eslint
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {

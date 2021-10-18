@@ -12,10 +12,11 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "type-check": "tsc",
     "lint": "eslint src/** --ext .ts,.tsx",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
   "scriptsComments": {
-    "note": "scripts were obtained from another project initialized with `npm init gatsby`",
+    "executive-note": "scripts with gatsby in them were obtained from another project initialized with `npm init gatsby`",
+    "format": "--ignore-path flag is in hopes of enabling prettier use without a .prettierignore file",
     "commenting": "I used the answer by gkond on the following SO page to structure my commments",
     "page": "https://stackoverflow.com/questions/14221579/how-do-i-add-comments-to-package-json-for-npm-install"
   },
@@ -48,10 +49,13 @@
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.4.1",
     "typescript": "^4.4.4"
   }
 }
