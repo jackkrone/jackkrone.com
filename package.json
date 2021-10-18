@@ -10,7 +10,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "type-check": "tsc"
   },
   "scriptsComments": {
     "note": "scripts were obtained from another project initialized with `npm init gatsby`",
@@ -30,7 +31,13 @@
   "homepage": "https://github.com/jackkrone/jackkrone.com#readme",
   "dependencies": {
     "gatsby": "^3.14.3",
+    "gatsby-plugin-typescript": "^3.14.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.30",
+    "@types/react-dom": "^17.0.9",
+    "typescript": "^4.4.4"
   }
 }
