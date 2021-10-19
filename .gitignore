@@ -55,9 +55,9 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
-.cache/
-public
+# gatsby files: Must turn these on for github pages to work... Note: use netlify in future
+# .cache/
+# public
 
 # Mac files
 .DS_Store
