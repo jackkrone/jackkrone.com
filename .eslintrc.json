@@ -19,6 +19,7 @@
     "airbnb", // includes/requires eslint, plugin:import, plugin:react, plugin:react-hooks, plugin:jsx-a11y (resource: https://www.npmjs.com/package/eslint-config-airbnb)
     "airbnb/hooks", // using this in place of react-hooks plugin configuration
     // "airbnb-typescript": another possible option but has issue with peer dependencies (resource: https://www.npmjs.com/package/eslint-config-airbnb-typescript)
+    "plugin:import/typescript", // prevents message regarding missing file extension on import statement in combination with line 50
 
     // ESLint with prettier resource (commented on line 6) for following 5 lines:
     // Update: many of the "5 lines" were merged into 1: https://github.com/prettier/eslint-config-prettier/blob/main/CHANGELOG.md#version-800-2021-02-21
@@ -45,7 +46,7 @@
     "no-unused-vars": "off", 
     "@typescript-eslint/no-unused-vars": ["error"], // may also be useful to set to "warn"
 
-    // prevents message regarding missing file extension on import statement:
+    // prevents message regarding missing file extension on import statement in combination with line 22
     "import/extensions": [ "error", "ignorePackages", { "ts": "never", "tsx": "never" } ],
 
     "react/prop-types": "off",
