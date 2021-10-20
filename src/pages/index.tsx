@@ -22,7 +22,14 @@ const Home = () => {
         project to learn how the authentic form of Bootstrap works.
       </p>
       <p>
-        For an extra challenge I started this project from zero. Literally, with{' '}
+        This project included a number of false starts. For instance, I
+        considered using a Gatsby{' '}
+        <Link to="https://www.gatsbyjs.com/starters/">starter</Link> but, after
+        beginning development on one, was frustrated to discover it wasn't using
+        v3 of Gatsby. Developing and maintaining this site is a long-term
+        investment for me, so I wanted to be using the latest major release.
+        Attempting to migrate the project from v2 to v3 was a headache, so I
+        started over, and this time from zero. Literally, with{' '}
         <code
           style={{
             background: 'lightgrey',
@@ -33,13 +40,25 @@ const Home = () => {
         >
           npm init -y
         </code>
-        . I had a heck of a time with all the configuration and adding packages
-        one by one. I probably learned more from the setup alone than from the
-        remainder of the process. I learned how to use a number of useful tools
-        while getting everything set up, including nvm, react-helmet, and
-        bootstrap-dark-5 (enables bootstrap with dark mode). I also learned how
-        to get ESLint and Prettier to play nice together with the help of
-        eslint-plugin-prettier.
+        . I had a heck of a time figuring out all the configuration and adding
+        packages one-by-one, but in the end I may have learned more from the
+        setup alone than from building the site. This gives me confidence in my
+        ability to work on more complex projects in the future that can't rely
+        on common boilerplate like{' '}
+        <code
+          style={{
+            background: 'lightgrey',
+            borderRadius: '4px',
+            paddingLeft: '0.25em',
+            paddingRight: '0.25em',
+          }}
+        >
+          create-react-app
+        </code>
+        . I learned how to use a number of useful tools while getting everything
+        set up, including nvm, react-helmet, and bootstrap-dark-5 (enables
+        bootstrap with dark mode). I also learned how to persuade ESLint and
+        Prettier to cooperate with the help of eslint-plugin-prettier.
       </p>
       <hr />
       <p>
