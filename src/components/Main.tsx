@@ -7,10 +7,8 @@ type MainProps = {
 const Main = ({ children }: MainProps) => {
   return (
     <div className="col">
-      <div
-        className="container m-3" /* set container with specific widths for various screen widths */
-      >
-        {children}
+      <div className=" d-flex flex-column m-0 p-2 p-md-4">
+        <div className="container p-0 pt-1 pt-md-0">{children}</div>
       </div>
     </div>
   );
