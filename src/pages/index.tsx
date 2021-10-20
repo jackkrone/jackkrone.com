@@ -27,8 +27,8 @@ const Home = () => {
           style={{
             background: 'lightgrey',
             borderRadius: '4px',
-            paddingLeft: '0.5em',
-            paddingRight: '0.5em',
+            paddingLeft: '0.25em',
+            paddingRight: '0.25em',
           }}
         >
           npm init -y
@@ -36,9 +36,10 @@ const Home = () => {
         . I had a heck of a time with all the configuration and adding packages
         one by one. I probably learned more from the setup alone than from the
         remainder of the process. I learned how to use a number of useful tools
-        while getting everything set up, including nvm and react-helmet. I also
-        learned how to get ESLint and Prettier to play nice together with the
-        help of eslint-plugin-prettier.
+        while getting everything set up, including nvm, react-helmet, and
+        bootstrap-dark-5 (enables bootstrap with dark mode). I also learned how
+        to get ESLint and Prettier to play nice together with the help of
+        eslint-plugin-prettier.
       </p>
       <hr />
       <p>
