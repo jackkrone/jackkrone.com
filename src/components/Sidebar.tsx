@@ -51,6 +51,11 @@ const Sidebar = () => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link to="/connect" className="nav-link active">
+                Connect
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link to="/{/* need to fill */}" className="nav-link">
                 Other
               </Link>
