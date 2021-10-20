@@ -8,16 +8,14 @@ const Sidebar = () => {
       /* Note I want to set a max width that doesn't interfere with col-12 for xs and s screens */
     >
       <nav
-        className="navbar navbar-expand-md navbar-dark bd-dark flex-md-column flex-row align-items-center py-2 text-left sticky-top "
+        className="navbar navbar-expand-md navbar-dark bd-dark flex-md-column flex-row text-end text-md-start align-items-center py-2 sticky-top "
         id="sidebar"
       >
-        <p className="navbar-brand mx-0 font-weight-bold  text-nowrap text-center p-3">
-          Jack Krone
-        </p>
-        <hr />
+        <p className="text-nowrap m-3 text-white fs-2">Jack Krone</p>
+        <hr /* make this show up at some point */ />
         <button
           type="button"
-          className="navbar-toggler border-0 order-1"
+          className="navbar-toggler border-0 order-1 me-3"
           data-bs-toggle="collapse"
           data-bs-target="#nav"
           aria-controls="nav"
@@ -27,8 +25,11 @@ const Sidebar = () => {
           <span className="navbar-toggler-icon" />
         </button>
 
-        <div className="collapse navbar-collapse order-last" id="nav">
-          <ul className="navbar-nav flex-column w-100 justify-content-center">
+        <div
+          className="collapse navbar-collapse order-last me-4 me-md-0"
+          id="nav"
+        >
+          <ul className="navbar-nav flex-column w-100 fs-4">
             <li className="nav-item">
               <Link to="/" className="nav-link active">
                 Home
@@ -51,7 +52,7 @@ const Sidebar = () => {
             </li>
             <li className="nav-item">
               <Link to="/{/* need to fill */}" className="nav-link">
-                Other Things
+                Other
               </Link>
             </li>
           </ul>
