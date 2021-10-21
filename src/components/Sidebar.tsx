@@ -36,13 +36,13 @@ const Sidebar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/projects" className="nav-link active">
-                Projects
+              <Link to="/thoughts" className="nav-link active">
+                Thoughts
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/thoughts" className="nav-link active">
-                Thoughts
+              <Link to="/projects" className="nav-link active">
+                Projects
               </Link>
             </li>
             <li className="nav-item">
