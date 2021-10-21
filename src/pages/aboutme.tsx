@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 const AboutMe = () => {
   return (
     <Layout>
-      <h1>About Me</h1>
+      <h1>About me</h1>
     </Layout>
   );
 };
