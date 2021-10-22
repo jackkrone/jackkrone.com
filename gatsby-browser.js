@@ -2,3 +2,4 @@
 import 'bootstrap-dark-5/dist/css/bootstrap-dark.min.css'; // replaced normal bootstrap import to enable darkmode
 import 'bootstrap/dist/js/bootstrap.min';
 import '@popperjs/core/dist/umd/popper.min';
+import 'bootstrap-icons/font/bootstrap-icons.css';
