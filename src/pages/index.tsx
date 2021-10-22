@@ -63,13 +63,13 @@ const Home = () => {
       <hr />
       <p>
         The inspiration for this site comes from{' '}
-        <Link to="https://training.kalzumeus.com/newsletters/archive/do-not-end-the-week-with-nothing">
+        <a href="https://training.kalzumeus.com/newsletters/archive/do-not-end-the-week-with-nothing">
           this
-        </Link>{' '}
+        </a>{' '}
         essay by Patrick McKenzie. Over time, I plan to configure my site to{' '}
-        <Link to="https://www.gatsbyjs.com/docs/how-to/routing/adding-markdown-pages/">
+        <a href="https://www.gatsbyjs.com/docs/how-to/routing/adding-markdown-pages/">
           read markdown
-        </Link>{' '}
+        </a>{' '}
         so adding new content will be minimally intensive.
       </p>
     </Layout>
