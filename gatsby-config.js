@@ -39,5 +39,17 @@ module.exports = {
         path: `${__dirname}/src/thoughts_md`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`, // This sets up manifest file for PWA generation, also handles favicon
+      options: {
+        name: `Jack Krone`,
+        start_url: `/`,
+        background_color: `#eeeeee`,
+        theme_color: `#eeeeee`,
+        display: `minimal-ui`,
+        icon: `src/images/favicon.png`,
+      },
+    },
+    `gatsby-plugin-offline`, // This caches pages, thereby enabling the web app to run when there is no connection
   ],
 };
