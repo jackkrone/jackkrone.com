@@ -39,6 +39,7 @@ module.exports = {
         path: `${__dirname}/src/thoughts_md`,
       },
     },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`, // This sets up manifest file for PWA generation, also handles favicon
       options: {
