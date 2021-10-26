@@ -48,7 +48,7 @@ module.exports = {
         background_color: `#eeeeee`,
         theme_color: `#eeeeee`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`,
+        icon: `src/images/favicon.svg`,
       },
     },
     `gatsby-plugin-offline`, // This caches pages, thereby enabling the web app to run when there is no connection
