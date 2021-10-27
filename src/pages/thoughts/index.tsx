@@ -1,12 +1,32 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
+import PrintByYear from '../../components/PrintByYear';
 
-const Thoughts = () => {
+const Projects = ({ data }: Record<string, unknown>) => {
+  const thoughtsList = data.allMarkdownRemark.nodes;
+
   return (
     <Layout>
       <h1>Thoughts</h1>
+      <PrintByYear list={thoughtsList} />
     </Layout>
   );
 };
 
-export default Thoughts;
+export const query = graphql`
+  query ThoughtsPage {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/thoughts/" } }) {
+      nodes {
+        frontmatter {
+          title
+          slug
+          date
+        }
+        id
+      }
+    }
+  }
+`;
+
+export default Projects;
