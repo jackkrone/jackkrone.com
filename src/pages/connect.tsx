@@ -1,14 +1,19 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { FaEnvelope, FaGithub, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import Layout from '../components/Layout';
 
 const Connect = () => {
   return (
     <Layout>
       <h1>Connect</h1>
-      <div className="mt-2 d-flex flex-row align-items-center">
-        <a href="https://github.com/jackkrone" target="_blank" rel="noreferrer">
-          <i className="h5 bi bi-github me-1 link-secondary" />
+      <div className="m-a d-flex flex-row align-items-center">
+        <a
+          href="https://github.com/jackkrone"
+          target="_blank"
+          rel="noreferrer"
+          className="h4 me-1 pt-1 link-secondary"
+        >
+          <FaGithub />
         </a>
         <span className="mx-1">GitHub:</span>
         <a href="https://github.com/jackkrone" target="_blank" rel="noreferrer">
@@ -16,19 +21,31 @@ const Connect = () => {
         </a>
       </div>
       <div className="d-flex flex-row align-items-center">
-        <a href="mailto:connect@jackkrone.com">
-          <i className="h5 bi bi-envelope-fill me-1 link-secondary" />
+        <a
+          href="mailto:connect@jackkrone.com"
+          className="h4 me-1 pt-1 link-secondary"
+        >
+          <FaEnvelope />
         </a>
         <span className="mx-1">Email:</span>
         <a href="mailto:connect@jackkrone.com">connect@jackkrone.com</a>
       </div>
       <div className="d-flex flex-row align-items-center">
-        <a href="twitter" target="_blank" rel="noreferrer">
-          <i className="h5 bi bi-twitter me-1 link-secondary" />
+        <a
+          href="https://twitter.com/protajack"
+          target="_blank"
+          rel="noreferrer"
+          className="h4 me-1 pt-1 link-secondary"
+        >
+          <FaTwitter />
         </a>
         <span className="mx-1">Twitter:</span>
-        <a href="twitter" target="_blank" rel="noreferrer">
-          @twitter
+        <a
+          href="https://twitter.com/protajack"
+          target="_blank"
+          rel="noreferrer"
+        >
+          @protajack
         </a>
       </div>
       <div className="d-flex flex-row align-items-center">
@@ -36,10 +53,11 @@ const Connect = () => {
           href="https://linkedin.com/in/jackkrone"
           target="_blank"
           rel="noreferrer"
+          className="h4 me-1 pt-1 link-secondary"
         >
-          <i className="h5 bi bi-linkedin me-1 link-secondary" />
+          <FaLinkedinIn />
         </a>
-        <span className="mx-1">LinkedIn</span>
+        <span className="mx-1">LinkedIn:</span>
         <a
           href="https://linkedin.com/in/jackkrone"
           target="_blank"
