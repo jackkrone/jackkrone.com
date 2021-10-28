@@ -49,7 +49,10 @@
     // prevents message regarding missing file extension on import statement in combination with line 22
     "import/extensions": [ "error", "ignorePackages", { "ts": "never", "tsx": "never" } ],
 
+    // we do not use prop-types or default props (https://stackoverflow.com/questions/63696724/eslint-problem-with-default-props-in-functional-component-typescript-react/64041197#64041197)
     "react/prop-types": "off",
+    "react/require-default-props": "off",
+
     // allows jsx in .tsx files:
     "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ]
   }

@@ -3,8 +3,7 @@ import Layout from '../../components/Layout';
 
 const OtherThings = () => {
   return (
-    <Layout>
-      <h1>Other things</h1>
+    <Layout title="Other things">
       <p>Architecture, art, family history, interesting articles, books list</p>
     </Layout>
   );

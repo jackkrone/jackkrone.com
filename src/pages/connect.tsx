@@ -1,40 +1,75 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { FaEnvelope, FaGithub, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import Layout from '../components/Layout';
 
 const Connect = () => {
   return (
-    <Layout>
-      <h1>Connect</h1>
-      <br />
-      <hr />
-      <div className="h1 d-flex flex-row justify-content-center justify-content-md-start">
-        <a
-          href="https://github.com/jackkrone"
-          target="_blank"
-          className="px-3 ps-md-0 pe-md-4 me-lg-2"
-          rel="noreferrer"
-        >
-          <i className="bi bi-github text-secondary" />
-        </a>
-        <a className="px-3 px-md-4 mx-lg-2" href="mailto:connect@jackkrone.com">
-          <i className="bi bi-envelope-fill text-secondary" />
-        </a>
-        <Link
-          to="needToAddTwitterHandle"
-          target="_blank"
-          className="px-3 px-md-4 mx-lg-2"
-        >
-          <i className="bi bi-twitter text-secondary" />
-        </Link>
-        <a
-          href="https://linkedin.com/in/jackkrone"
-          target="_blank"
-          className="px-3 px-md-4 mx-lg-2"
-          rel="noreferrer"
-        >
-          <i className="bi bi-linkedin text-secondary" />
-        </a>
+    <Layout title="Connect">
+      <div className="d-grid gap-2">
+        <div>
+          <a
+            href="https://github.com/jackkrone"
+            target="_blank"
+            rel="noreferrer"
+            className="fs-4 me-1 link-secondary"
+          >
+            <FaGithub />
+          </a>
+          <span className="mx-1">GitHub:</span>
+          <a
+            href="https://github.com/jackkrone"
+            target="_blank"
+            rel="noreferrer"
+          >
+            @jackkrone
+          </a>
+        </div>
+        <div>
+          <a
+            href="mailto:connect@jackkrone.com"
+            className="fs-4 me-1 link-secondary"
+          >
+            <FaEnvelope />
+          </a>
+          <span className="mx-1">Email:</span>
+          <a href="mailto:connect@jackkrone.com">connect@jackkrone.com</a>
+        </div>
+        <div>
+          <a
+            href="https://twitter.com/protajack"
+            target="_blank"
+            rel="noreferrer"
+            className="fs-4 me-1 link-secondary"
+          >
+            <FaTwitter />
+          </a>
+          <span className="mx-1">Twitter:</span>
+          <a
+            href="https://twitter.com/protajack"
+            target="_blank"
+            rel="noreferrer"
+          >
+            @protajack
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://linkedin.com/in/jackkrone"
+            target="_blank"
+            rel="noreferrer"
+            className="fs-4 me-1 link-secondary"
+          >
+            <FaLinkedinIn />
+          </a>
+          <span className="mx-1">LinkedIn:</span>
+          <a
+            href="https://linkedin.com/in/jackkrone"
+            target="_blank"
+            rel="noreferrer"
+          >
+            @jackkrone
+          </a>
+        </div>
       </div>
     </Layout>
   );

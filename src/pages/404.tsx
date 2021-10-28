@@ -3,9 +3,8 @@ import Layout from '../components/Layout';
 
 const pageNotFound = () => {
   return (
-    <Layout>
-      <h1>404</h1>
-      <h2>Whoops... the page you're looking for doesn't exist.</h2>
+    <Layout title="404">
+      <h5>Whoops... the page you're looking for doesn't exist.</h5>
     </Layout>
   );
 };

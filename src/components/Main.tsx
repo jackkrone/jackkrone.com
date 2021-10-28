@@ -1,14 +1,17 @@
 import React from 'react';
 
-type MainProps = {
+interface MainProps {
   children: React.ReactNode;
-};
+}
 
 const Main = ({ children }: MainProps) => {
   return (
     <div className="col">
-      <div className=" d-flex flex-column m-0 p-2 p-md-4">
-        <div className="container p-0 pt-1 pt-md-0">{children}</div>
+      <div
+        style={{ marginTop: '2rem' }}
+        className="d-flex flex-column mx-2 m-md-4"
+      >
+        <div className="container p-0">{children}</div>
       </div>
     </div>
   );

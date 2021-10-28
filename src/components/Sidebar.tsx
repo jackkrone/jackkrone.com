@@ -8,11 +8,14 @@ const Sidebar = () => {
       /* Note I want to set a max width that doesn't interfere with col-12 for xs and s screens */
     >
       <nav
-        className="navbar navbar-expand-md navbar-dark bd-dark flex-md-column flex-row text-end text-md-start align-items-center py-2 sticky-top "
+        className="navbar navbar-dark p-0 text-end align-items-center navbar-expand-md text-md-start d-md-grid justify-content-md-center"
         id="sidebar"
       >
-        <p className="text-nowrap m-3 text-white fs-2">Jack Krone</p>
-        <hr /* make this show up at some point */ />
+        <p className="navbar-brand text-nowrap p-0 my-4 mx-3 mx-lg-4 fs-2">
+          Jack Krone
+        </p>
+        {/* navbar-brand prob not necessary */}
+        <hr className="bg-light mt-0" style={{ opacity: '0.5' }} />
         <button
           type="button"
           className="navbar-toggler border-0 order-1 me-3"
@@ -24,12 +27,12 @@ const Sidebar = () => {
         >
           <span className="navbar-toggler-icon" />
         </button>
-
         <div
-          className="collapse navbar-collapse order-last me-4 me-md-0"
+          className="collapse navbar-collapse order-last mx-4 me-md-0 ms-md-2 ms-lg-3"
           id="nav"
         >
-          <ul className="navbar-nav flex-column w-100 fs-4">
+          <hr className="bg-light mt-1" style={{ opacity: '0.5' }} />
+          <ul className="navbar-nav flex-column w-100 fs-4 mb-3">
             <li className="nav-item">
               <Link to="/" className="nav-link active">
                 Home

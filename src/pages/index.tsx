@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 
 const Home = () => {
   return (
     <Layout>
-      <h1>Hello World</h1>
-
-      <p className="pt-2">
+      <h2 className="mb-3">Hello World</h2>
+      <p>
         I'm Jack. I created this site mainly as an opportunity to learn, but
         also as a place to share some projects and thoughts.
       </p>
@@ -24,7 +22,7 @@ const Home = () => {
       <p>
         This project included a number of false starts. For instance, I
         considered using a Gatsby{' '}
-        <Link to="https://www.gatsbyjs.com/starters/">starter</Link> but, after
+        <a href="https://www.gatsbyjs.com/starters/">starter</a> but, after
         beginning development on one, was frustrated to discover it wasn't using
         v3 of Gatsby. Developing and maintaining this site is a long-term
         investment for me, so I wanted to be using the latest major release.
