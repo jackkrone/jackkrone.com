@@ -7,8 +7,11 @@ interface MainProps {
 const Main = ({ children }: MainProps) => {
   return (
     <div className="col">
-      <div className="d-flex flex-column m-2 m-md-4">
-        <div className="container p-0 mt-1 mt-md-0">{children}</div>
+      <div
+        style={{ marginTop: '2rem' }}
+        className="d-flex flex-column mx-2 m-md-4"
+      >
+        <div className="container p-0">{children}</div>
       </div>
     </div>
   );
