@@ -1,0 +1,6 @@
+/* override bootstrap-dark-5 behaivor for setting opacity hr to 0.1 */
+@media (prefers-color-scheme: dark) {
+  hr {
+    opacity: 0.4;
+  };
+}

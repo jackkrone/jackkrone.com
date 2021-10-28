@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import '../styles/global.css';
 import Sidebar from './Sidebar';
 import Main from './Main';
 
