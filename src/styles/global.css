@@ -2,5 +2,40 @@
 @media (prefers-color-scheme: dark) {
   hr {
     opacity: 0.4;
-  };
+  }
+}
+
+/*  make .btn-light match .btn-dark styles when in dark mode */
+@media (prefers-color-scheme: dark) {
+  .btn-light {
+    background-color: #3b3b3b;
+    border-color: #3b3b3b;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-light:hover {
+    /*color: #fafafa;*/
+    background-color: #323232;
+    border-color: #2f2f2f;
+  }
+}
+
+/* make .link-primary match .link-info styles when in dark mode */
+/*
+*  this doesn't seem to affect tags that are not explicitly typed as link-primary
+*  that's good for now, but I may want to consider modularizing this code or linking it
+*  to a different class name as the website grows, since these styles should only apply
+*  to the links within buttons on the thoughts and projects pages
+*/
+@media (prefers-color-scheme: dark) {
+  .link-primary {
+    color: #17a2b8;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .link-primary:focus, .link-primary:hover {
+    color: #128293;
+  }
 }
