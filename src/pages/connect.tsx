@@ -4,8 +4,7 @@ import Layout from '../components/Layout';
 
 const Connect = () => {
   return (
-    <Layout>
-      <h1>Connect</h1>
+    <Layout title="Connect">
       <div className="m-a d-flex flex-row align-items-center">
         <a
           href="https://github.com/jackkrone"

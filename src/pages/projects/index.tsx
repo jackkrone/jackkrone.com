@@ -8,8 +8,7 @@ const Projects = ({ data }: Record<string, unknown>) => {
   console.log(projectsList);
 
   return (
-    <Layout>
-      <h1>Projects</h1>
+    <Layout title="Projects">
       <PrintByYear list={projectsList} />
     </Layout>
   );

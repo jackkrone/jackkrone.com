@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 
 const Home = () => {
   return (
     <Layout>
-      <h1>Hello World</h1>
-
-      <p className="pt-2">
+      <h2 className="mb-3">Hello World</h2>
+      <p>
         I'm Jack. I created this site mainly as an opportunity to learn, but
         also as a place to share some projects and thoughts.
       </p>

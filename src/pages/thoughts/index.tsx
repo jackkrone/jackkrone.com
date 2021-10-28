@@ -7,8 +7,7 @@ const Projects = ({ data }: Record<string, unknown>) => {
   const thoughtsList = data.allMarkdownRemark.nodes;
 
   return (
-    <Layout>
-      <h1>Thoughts</h1>
+    <Layout title="Thoughts">
       <PrintByYear list={thoughtsList} />
     </Layout>
   );
