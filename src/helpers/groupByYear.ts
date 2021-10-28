@@ -1,13 +1,13 @@
-type fmType = {
+interface fmType {
   title: string;
   date: string;
   slug: string;
-};
+}
 
-type listType = {
+interface listType {
   id: string;
   frontmatter: fmType;
-};
+}
 
 // Take GraphQL query nodes and sort them into an array of arrays
 const groupByYear = (list: listType[]) => {

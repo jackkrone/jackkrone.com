@@ -1,8 +1,8 @@
 import React from 'react';
 
-type MainProps = {
+interface MainProps {
   children: React.ReactNode;
-};
+}
 
 const Main = ({ children }: MainProps) => {
   return (
