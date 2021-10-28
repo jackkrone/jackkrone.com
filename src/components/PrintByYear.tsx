@@ -9,7 +9,7 @@ const PrintByYear = ({ list }) => {
     const year = group[0];
     const posts = group[1];
     return (
-      <>
+      <div className="mb-4">
         <h5>{year}</h5>
         <hr />
         <div className="d-grid gap-3">
@@ -27,7 +27,7 @@ const PrintByYear = ({ list }) => {
             </Link>
           ))}
         </div>
-      </>
+      </div>
     );
   });
 
