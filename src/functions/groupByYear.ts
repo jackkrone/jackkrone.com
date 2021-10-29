@@ -1,10 +1,8 @@
 // This function accepts a list of posts provided by a GraphQL request and returns a list of lists sorted by year
 
-import Posts from '../templates/posts';
-
 interface fmType {
   title: string;
-  date: string;
+  date: Date;
   slug: string;
 }
 
@@ -23,7 +21,8 @@ type yearsType = Record<string, newElemType[]>;
 const groupByYear = (list: listType[]) => {
   // simplify list items
   const simpleList = list.map((elem: listType) => {
-    const { title, date, slug } = elem.frontmatter;
+    const { title, slug } = elem.frontmatter;
+    const date = new Date(elem.frontmatter.date);
     const { id } = elem;
     const newElem: newElemType = { title, date, slug, id };
     return newElem;
@@ -33,9 +32,8 @@ const groupByYear = (list: listType[]) => {
   // years = { 2020: [...], 2017: [...], 2022: [...], ...}
   // issue with .reduce() method: https://www.reddit.com/r/typescript/comments/bfkncu/when_using_arrayreduce_and_the_initial_value_is/
   const years = simpleList.reduce((prev, nextElem) => {
-    // Extract year in form of string (may not be necessary to extract as strings)
-    const fullDate = new Date(nextElem.date);
-    const year = fullDate.getFullYear().toString();
+    // Extract year from date property
+    const year = nextElem.date.getFullYear();
     // create output object
     const output = prev;
     if (!output[year]) {
@@ -66,6 +64,7 @@ const groupByYear = (list: listType[]) => {
   groups.forEach(group => {
     let { posts } = group;
     // don't need to read value of posts since JS passes array by reference
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     posts = posts?.sort((a, b) => {
       if (a.date > b.date) {
         return -1;
