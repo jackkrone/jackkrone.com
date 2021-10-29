@@ -1,3 +1,5 @@
+// Turn off projects page for now until I have projects to share
+/*
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
@@ -16,7 +18,9 @@ const Projects = ({ data }: Record<string, unknown>) => {
 
 export const query = graphql`
   query ProjectsPage {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/md-projects/" } }
+    ) {
       nodes {
         frontmatter {
           title
@@ -28,5 +32,15 @@ export const query = graphql`
     }
   }
 `;
+
+export default Projects;
+*/
+
+import React from 'react';
+import Layout from '../../components/Layout';
+
+const Projects = () => {
+  return <Layout title="Projects" />;
+};
 
 export default Projects;

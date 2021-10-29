@@ -25,18 +25,18 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
+    /* {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/src/projects_md`,
+        path: `${__dirname}/src/md-projects`,
       },
-    },
+    }, */
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `thoughts`,
-        path: `${__dirname}/src/thoughts_md`,
+        path: `${__dirname}/src/md-thoughts`,
       },
     },
     `gatsby-transformer-remark`,

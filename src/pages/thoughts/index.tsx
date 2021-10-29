@@ -15,7 +15,9 @@ const Projects = ({ data }: Record<string, unknown>) => {
 
 export const query = graphql`
   query ThoughtsPage {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/thoughts/" } }) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/md-thoughts/" } }
+    ) {
       nodes {
         frontmatter {
           title
