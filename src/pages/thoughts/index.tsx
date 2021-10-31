@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
 import PrintByYear from '../../components/PrintByYear';
 
-const Projects = ({ data }: Record<string, unknown>) => {
+const Thoughts = ({ data }: Record<string, unknown>) => {
   const thoughtsList = data.allMarkdownRemark.nodes;
 
   return (
@@ -30,4 +30,4 @@ export const query = graphql`
   }
 `;
 
-export default Projects;
+export default Thoughts;

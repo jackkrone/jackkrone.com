@@ -54,6 +54,9 @@
     "react/require-default-props": "off",
 
     // allows jsx in .tsx files:
-    "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ]
+    "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ],
+
+    // Allow dangerouslySetInnerHTML
+    "react/no-danger": "off"
   }
 }
