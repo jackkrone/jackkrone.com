@@ -3,14 +3,8 @@ import { Link } from 'gatsby';
 
 const Sidebar = () => {
   return (
-    <aside
-      className="col-12 col-md-3 p-0 bg-dark"
-      /* Note I want to set a max width that doesn't interfere with col-12 for xs and s screens */
-    >
-      <nav
-        className="navbar navbar-dark p-0 text-end align-items-center navbar-expand-md text-md-start d-md-grid justify-content-md-center"
-        id="sidebar"
-      >
+    <aside className="col-12 col-md-3 p-0 bg-dark sticky-top" id="sidebar">
+      <nav className="navbar navbar-dark p-0 text-end align-items-center navbar-expand-md text-md-start d-md-grid justify-content-md-center">
         <p className="navbar-brand text-nowrap p-0 my-4 mx-3 mx-lg-4 fs-2">
           Jack Krone
         </p>
