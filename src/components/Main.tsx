@@ -9,7 +9,7 @@ const Main = ({ children }: MainProps) => {
     <div className="col">
       <div
         style={{ marginTop: '2rem' }}
-        className="d-flex flex-column mx-2 m-md-4"
+        className="d-flex flex-column mx-2 m-md-4 overflow-hidden"
       >
         <div className="container p-0">{children}</div>
       </div>
