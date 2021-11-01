@@ -39,3 +39,14 @@
     color: #128293;
   }
 }
+
+/* Prevent scroll bounce:
+* This only seems to work on chrome and firefox
+* There are multiple options listed here: https://stackoverflow.com/questions/32500876/how-to-prevent-white-space-bounce-after-scrolling-to-the-top-of-the-page-and-t/55396682
+* None work for safari, but this one worked for chrome and firefox and was the most succinct
+*/
+
+html, body {
+  overscroll-behavior: none;
+}
+
