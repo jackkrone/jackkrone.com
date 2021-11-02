@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 const Home = () => {
   return (
     <Layout>
-      <h2 className="mb-3">Hello World</h2>
+      <h2 className="mb-3">Hello World (this site is a work in progress)</h2>
       <p>
         I'm Jack. I created this site mainly as an opportunity to learn, but
         also as a place to share some projects and thoughts.
