@@ -65,5 +65,18 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`, // This caches pages, thereby enabling the web app to run when there is no connection
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // Note: if GA has issues in future, consider listing it first in plugins list
+        trackingIds: [
+          'G-6WTBPMKK9D', // Google Analytics
+        ],
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+        },
+      },
+    },
   ],
 };
