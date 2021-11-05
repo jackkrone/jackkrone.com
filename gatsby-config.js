@@ -14,11 +14,11 @@ module.exports = {
     siteUrl: `https://jackkrone.com`,
   },
   plugins: [
-    'gatsby-plugin-typescript',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -43,7 +43,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`, // Setup resource: https://www.youtube.com/watch?v=9B8i_CAON_0
       options: {
-        extensions: ['.md', '.mdx'],
+        extensions: [`.md`, `.mdx`],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -71,7 +71,7 @@ module.exports = {
       options: {
         // Note: if GA has issues in future, consider listing it first in plugins list
         trackingIds: [
-          'G-6WTBPMKK9D', // Google Analytics
+          `G-6WTBPMKK9D`, // Google Analytics
         ],
         pluginConfig: {
           // Puts tracking script in the head instead of the body
