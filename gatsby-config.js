@@ -41,9 +41,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`, // Setup resource: https://www.youtube.com/watch?v=9B8i_CAON_0
       options: {
-        plugins: [
+        extensions: ['.md', '.mdx'],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {

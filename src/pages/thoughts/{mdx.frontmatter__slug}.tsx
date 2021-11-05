@@ -1,17 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../../components/Layout';
 
 const ThoughtsTemplate = ({ data }) => {
-  const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark;
+  const { mdx } = data; // data.mdx holds your post data
+  const { frontmatter, html } = mdx;
 
   return (
     <Layout title={frontmatter.title}>
       <p>
         <strong>{frontmatter.date}</strong>
       </p>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <MDXRenderer>{mdx.body}</MDXRenderer>
     </Layout>
   );
 };
@@ -20,8 +21,8 @@ export default ThoughtsTemplate;
 
 export const pageQuery = graphql`
   query ($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
+    mdx(id: { eq: $id }) {
+      body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         slug

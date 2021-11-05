@@ -8,6 +8,8 @@ title: Natural gas investment thesis
 
 ---
 
+<br />
+
 **Summary:** Invest with margin in US natural gas producers and pipeline operators that have high dividend yields and a consistent dividend history. Investment timeline: 2+ years.
 
 #### Natural Gas isn’t going anywhere
@@ -42,7 +44,11 @@ The Fed has explicitly stated its heightened tolerance for inflation in coming y
 
 ---
 
+<br />
+
 ## Charts
+
+<br />
 
 ![Figure 3](../images/natural-gas/nat-gas-marketed-prod.png)
 Figure 3: US production of natural gas over time. Production picked up in the late 2000's with the fracking boom. Production fell in early 2020.
@@ -55,7 +61,11 @@ Figure 6: US oil prices over time. The pandemic's effect on oil prices is more c
 
 ---
 
+<br />
+
 ## Other notes
+
+<br />
 
 #### Upside potential
 
