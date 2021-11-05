@@ -40,7 +40,19 @@ module.exports = {
         path: `${__dirname}/src/md-thoughts`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1320, // specify max width of content container
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`, // This sets up manifest file for PWA generation, also handles favicon
       options: {
