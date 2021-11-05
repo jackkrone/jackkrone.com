@@ -4,7 +4,7 @@ import Layout from '../../components/Layout';
 import PrintByYear from '../../components/PrintByYear';
 
 const Thoughts = ({ data }: Record<string, unknown>) => {
-  const thoughtsList = data.allMarkdownRemark.nodes;
+  const thoughtsList = data.allMdx.nodes;
 
   return (
     <Layout title="Thoughts">
@@ -15,16 +15,13 @@ const Thoughts = ({ data }: Record<string, unknown>) => {
 
 export const query = graphql`
   query ThoughtsPage {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/md-thoughts/" } }
-    ) {
+    allMdx(filter: { fileAbsolutePath: { regex: "/md-thoughts/" } }) {
       nodes {
         frontmatter {
-          title
-          slug
           date
+          slug
+          title
         }
-        id
       }
     }
   }
