@@ -1,21 +1,24 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
-import PrintByYear from '../../components/PrintByYear';
+import RenderByYear from '../../components/RenderByYear';
 
-const Thoughts = ({ data }: Record<string, unknown>) => {
+const Thoughts = ({ data }) => {
   const thoughtsList = data.allMdx.nodes;
 
   return (
     <Layout title="Thoughts">
-      <PrintByYear list={thoughtsList} />
+      <RenderByYear posts={thoughtsList} />
     </Layout>
   );
 };
 
 export const query = graphql`
   query ThoughtsPage {
-    allMdx(filter: { fileAbsolutePath: { regex: "/md-thoughts/" } }) {
+    allMdx(
+      filter: {fileAbsolutePath: {regex: "/md-thoughts/"}}
+      sort: {fields: frontmatter___date, order: DESC}
+    ) {
       nodes {
         frontmatter {
           date

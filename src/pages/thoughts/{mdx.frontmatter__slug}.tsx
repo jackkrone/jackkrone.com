@@ -6,11 +6,16 @@ import Layout from '../../components/Layout';
 const ThoughtsTemplate = ({ data }) => {
   const { mdx } = data; // data.mdx holds your post data
   const { frontmatter, html } = mdx;
+  const date = new Date(frontmatter.date).toLocaleDateString('default', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
 
   return (
     <Layout title={frontmatter.title}>
       <p>
-        <strong>{frontmatter.date}</strong>
+        <strong>{date}</strong>
       </p>
       <MDXRenderer>{mdx.body}</MDXRenderer>
     </Layout>
@@ -24,7 +29,7 @@ export const pageQuery = graphql`
     mdx(id: { eq: $id }) {
       body
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date
         slug
         title
       }
