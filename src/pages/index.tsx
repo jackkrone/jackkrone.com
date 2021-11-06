@@ -4,16 +4,16 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 
 const Home = ({ data }) => {
-  const sunrise = getImage(data.file);
+  const delta = getImage(data.file);
 
   return (
     <Layout>
-      <h2 className="mb-3">Hello World</h2>
+      <h1 className="mb-3">Hello World</h1>
       <div className="d-flex justify-content-center">
         <div className="mb-3 rounded-3" style={{ width: '90%' }}>
           <GatsbyImage
-            image={sunrise}
-            alt="Sunrise over the countryside"
+            image={delta}
+            alt="river delta"
             className="rounded-3"
           />
         </div>
@@ -41,7 +41,7 @@ const Home = ({ data }) => {
 
 export const query = graphql`
   query EarthImage {
-    file(relativePath: { eq: "sunrise.jpg" }) {
+    file(relativePath: { eq: "delta.jpg" }) {
       childImageSharp {
         gatsbyImageData(placeholder: BLURRED)
       }
