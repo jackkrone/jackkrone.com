@@ -1,6 +1,6 @@
 ---
 slug: natural-gas-investment-thesis
-date: 2021-02-06
+date: 2021-02-06T16:08:00-06:00
 title: Natural gas investment thesis
 ---
 
@@ -58,6 +58,7 @@ Figure 4: US natural gas prices over time. Prices were falling before global COV
 Figure 5: US natural gas consumption over time. The COVID-19 pandemic does not seem to have had a discernable effect on natural gas consumption.
 ![Figure 6](../images/natural-gas/wti-prices.png)
 Figure 6: US oil prices over time. The pandemic's effect on oil prices is more clear than its effect on natural gas prices. Many oil wells also produce natural gas. When prices fall and oil wells are closed, some natural gas production comes off line too.
+
 
 ---
 
