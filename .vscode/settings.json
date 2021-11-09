@@ -4,5 +4,20 @@
   "eslint.alwaysShowStatus": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  // eslint.options and eslint.validate are for enabling eslint in markdown files
+  // I'm not sure it's necessary to specifically indicate files other than .md and .mdx,
+  // ... because eslint should infer validations rules: https://github.com/Microsoft/vscode-eslint/issues/642
+  // I followed the instructions here: https://marketplace.visualstudio.com/items?itemName=JounQin.vscode-mdx&ssr=false#overview
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".md", ".mdx", ".ts", ".tsx"]
+  },
+  "eslint.validate": [
+    "markdown",
+    "mdx",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
 }

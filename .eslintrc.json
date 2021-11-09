@@ -14,7 +14,6 @@
     // docs on first three configs: https://www.npmjs.com/package/@typescript-eslint/eslint-plugin
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
 
     "airbnb", // includes/requires eslint, plugin:import, plugin:react, plugin:react-hooks, plugin:jsx-a11y (resource: https://www.npmjs.com/package/eslint-config-airbnb)
     "airbnb/hooks", // using this in place of react-hooks plugin configuration
@@ -35,6 +34,19 @@
     "sourceType": "module",
     "project": "./tsconfig.json" // This needed to be added manually for proper functioning
   },
+  // overrides statement enables eslint-plugin-mdx to work with typescript, as they have inherit conflicts that have to be resolved: https://github.com/mdx-js/eslint-mdx/issues/251#issuecomment-963837780
+  // These statements are necessary partially because @typescript-eslint/parser doesn't support .md and .mdx files: https://github.com/microsoft/TypeScript/issues/36440
+  // I believe that the second object in overrides is using the eslint-mdx parser, but it doesn't seem to make a difference if I explicitly state that or if I have eslint-mdx in package.json
+  "overrides": [
+    {
+      "files": [".tsx", ".ts"],
+      "extends": "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    },
+    {
+      "files": ["*.mdx"],
+      "extends": "plugin:mdx/recommended"
+    }
+  ],
   "plugins": [
     "react",
     "@typescript-eslint"
@@ -53,10 +65,14 @@
     "react/prop-types": "off",
     "react/require-default-props": "off",
 
-    // allows jsx in .tsx files:
-    "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ],
+    // allows jsx in .tsx files AND .mdx files:
+    "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx", ".mdx"]} ],
 
     // Allow dangerouslySetInnerHTML
     "react/no-danger": "off"
+  },
+  // Settings specify info to be shared across all rules: https://eslint.org/docs/user-guide/configuring/configuration-files#adding-shared-settings
+  "settings": {
+    "mdx/code-blocks": true
   }
 }
