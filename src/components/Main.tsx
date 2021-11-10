@@ -52,8 +52,11 @@ const Main = ({ children, home = false }: MainProps) => {
             >
               <div className="container p-0">
                 <h1
-                  className="text-white position-absolute bottom-0"
-                  style={{ textShadow: '3px 3px 5px black' }}
+                  className="position-absolute bottom-0"
+                  style={{
+                    textShadow: '3px 3px 5px black, 0px 0px 10px black',
+                    color: '#f8f9fa',
+                  }}
                 >
                   Hello World
                 </h1>
