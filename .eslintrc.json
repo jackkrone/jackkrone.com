@@ -66,10 +66,7 @@
     "react/require-default-props": "off",
 
     // allows jsx in .tsx files AND .mdx files:
-    "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx", ".mdx"]} ],
-
-    // Allow dangerouslySetInnerHTML
-    "react/no-danger": "off"
+    "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx", ".mdx"]} ]
   },
   // Settings specify info to be shared across all rules: https://eslint.org/docs/user-guide/configuring/configuration-files#adding-shared-settings
   "settings": {
