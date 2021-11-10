@@ -69,3 +69,18 @@ html, body {
     max-width: 80%;
   }
 }
+
+/* Give background image responsive height:
+* 35% of viewport width for screens up to medium
+* 20% of viewport width for screens medium and higher
+*/
+#bg-image {
+  height: 35vw;
+  max-height: 325px;
+}
+
+@media only screen and (min-device-width: 768px) {
+  #bg-image {
+    height: 20vw;
+  }
+}
