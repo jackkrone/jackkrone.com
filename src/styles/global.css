@@ -55,3 +55,17 @@ html, body {
     height: 100vh;
   }
 }
+
+/* Set responsive default width for mdx images:
+* 100% width up to and including screen size medium
+* 80% width for screen size large and higher
+*/
+.mdx-image {
+  max-width: 100%;
+}
+
+@media only screen and (min-device-width: 992px) {
+  .mdx-image {
+    max-width: 80%;
+  }
+}
