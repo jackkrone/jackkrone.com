@@ -12,7 +12,7 @@ It can be overridden with the maxWidth prop, which supports pixels or percentage
 
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 
 interface MdxImageProps {
   fileName: string;
@@ -39,12 +39,19 @@ const MdxImage = ({
     `
   );
 
+  // Get optimized image
   const image = getImage(
     allImageSharp.nodes.find(elem =>
       elem.gatsbyImageData.images.fallback.src.includes(fileName)
     )
   );
-  let styledCaption: JSX.Element | null = null;
+  // Get src to original image
+  // This procedure is unwieldy as I could get src from the image var
+  // Typescript doesn't like it though
+  const node = allImageSharp.nodes.find(elem =>
+    elem.gatsbyImageData.images.fallback.src.includes(fileName)
+  );
+  const { src } = node.gatsbyImageData.images.fallback;
 
   // set width if maxWidth was passed as an argument
   // this overrides the mdx-image class
@@ -54,6 +61,7 @@ const MdxImage = ({
   }
 
   // set caption if caption was passed as an argument
+  let styledCaption: JSX.Element | null = null;
   if (caption) {
     styledCaption = (
       <div style={width} className="mdx-image">
@@ -65,7 +73,9 @@ const MdxImage = ({
   return (
     <div className="d-flex flex-column align-items-center my-4">
       <div style={width} className="mdx-image">
-        <GatsbyImage image={image} alt={alt} />
+        <Link to={src}>
+          <GatsbyImage image={image} alt={alt} />
+        </Link>
       </div>
       {styledCaption}
     </div>
