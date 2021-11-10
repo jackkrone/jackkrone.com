@@ -7,9 +7,10 @@ import Main from './Main';
 interface LayoutProps {
   children?: React.ReactNode;
   title?: string;
+  home?: boolean;
 }
 
-const Layout = ({ children = null, title = '' }: LayoutProps) => {
+const Layout = ({ children = null, title = '', home = false }: LayoutProps) => {
   return (
     <>
       <Helmet>
@@ -21,7 +22,7 @@ const Layout = ({ children = null, title = '' }: LayoutProps) => {
       <div className="container-fluid">
         <div className="row min-vh-100 flex-column flex-md-row">
           <Sidebar />
-          <Main>
+          <Main home={home}>
             {title && <h1 className="mb-3">{title}</h1>}
             {children}
           </Main>

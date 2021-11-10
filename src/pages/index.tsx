@@ -1,30 +1,17 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 
-const Home = ({ data }) => {
-  const delta = getImage(data.file);
-
+const Home = () => {
   return (
-    <Layout>
-      <h1 className="mb-3">Hello World</h1>
-      <div className="d-flex justify-content-center">
-        <div className="mb-3 rounded-3" style={{ width: '90%' }}>
-          <GatsbyImage
-            image={delta}
-            alt="river delta"
-            className="rounded-3"
-          />
-        </div>
-      </div>
+    <Layout home>
       <p>
-        I’m Jack. Welcome to my personal site. I created this site primarily to
-        share ideas that are too long for a twitter thread. I often write down
-        useful things I learn because it helps me comprehend them better. By
-        sharing some of these things publicly, I hope to think more clearly,
-        spark fruitful conversations, and become a better communicator. I also
-        use this site to share projects I’ve worked on and to learn new web
+        Welcome to my personal site. I created this site primarily to share
+        ideas that are too long for a twitter thread. I often write down useful
+        things I learn because it helps me comprehend them better. By sharing
+        some of these things publicly, I hope to think more clearly, spark
+        fruitful conversations, and become a better communicator. I also use
+        this site to share projects I’ve worked on and to learn new web
         development skills.
       </p>
       <p>
@@ -38,15 +25,5 @@ const Home = ({ data }) => {
     </Layout>
   );
 };
-
-export const query = graphql`
-  query EarthImage {
-    file(relativePath: { eq: "delta.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(placeholder: BLURRED)
-      }
-    }
-  }
-`;
 
 export default Home;
