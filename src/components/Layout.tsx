@@ -22,7 +22,7 @@ const Layout = ({ children = null, title = '' }: LayoutProps) => {
         <div className="row min-vh-100 flex-column flex-md-row">
           <Sidebar />
           <Main>
-            {title && <h2 className="mb-3">{title}</h2>}
+            {title && <h1 className="mb-3">{title}</h1>}
             {children}
           </Main>
         </div>
