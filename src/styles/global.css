@@ -50,7 +50,7 @@ html, body {
 }
 
 /* Enable sticky-top for medium and above screen size */
-@media only screen and (min-device-width: 768px) {
+@media only screen and (min-width: 768px) {
   #sidebar {
     height: 100vh;
   }
@@ -64,7 +64,7 @@ html, body {
   max-width: 100%;
 }
 
-@media only screen and (min-device-width: 992px) {
+@media only screen and (min-width: 992px) {
   .mdx-image {
     max-width: 80%;
   }
@@ -79,7 +79,7 @@ html, body {
   max-height: 325px;
 }
 
-@media only screen and (min-device-width: 768px) {
+@media only screen and (min-width: 768px) {
   #bg-image {
     height: 20vw;
   }
