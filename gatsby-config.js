@@ -12,6 +12,13 @@ module.exports = {
     description: `This site hosts my personal blog and project portfolio.`,
     author: `Jack Krone`,
     siteUrl: `https://jackkrone.com`,
+    keywords: [
+      `software`,
+      `energy`,
+      `rare earths`,
+      `architecture`,
+      `javascript`,
+    ],
   },
   plugins: [
     {
