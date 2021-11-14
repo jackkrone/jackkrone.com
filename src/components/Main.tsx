@@ -17,13 +17,13 @@ interface MainProps {
 const Main = ({ children, home = false }: MainProps) => {
   const { lightImage, darkImage } = useStaticQuery(
     graphql`
-      query Banner {
-        lightImage: file(relativePath: { eq: "homepage-images/delta.jpg" }) {
+      query {
+        lightImage: file(relativePath: { eq: "solarpunk.jpg" }) {
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED)
           }
         }
-        darkImage: file(relativePath: { eq: "homepage-images/river.jpg" }) {
+        darkImage: file(relativePath: { eq: "solarpunk-dark.jpg" }) {
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED)
           }
@@ -34,7 +34,7 @@ const Main = ({ children, home = false }: MainProps) => {
 
   const sources = [
     { ...getImage(lightImage) },
-    { ...getImage(darkImage), media: `(prefers-color-scheme: dark)` },
+    { ...getImage(darkImage), media: '(prefers-color-scheme: dark)' },
   ];
 
   return (
@@ -42,7 +42,7 @@ const Main = ({ children, home = false }: MainProps) => {
       {home && (
         <BgImage
           image={sources}
-          style={{ backgroundSize: 'cover' }}
+          style={{ backgroundSize: 'cover', backgroundPosition: 'top' }}
           id="bg-image"
         >
           <div className="">
