@@ -7,7 +7,7 @@ const Thoughts = ({ data }) => {
   const thoughtsList = data.allMdx.nodes;
 
   return (
-    <Layout title="Thoughts">
+    <Layout pathName="/thoughts" title="Thoughts">
       <RenderByYear posts={thoughtsList} />
     </Layout>
   );
@@ -16,8 +16,8 @@ const Thoughts = ({ data }) => {
 export const query = graphql`
   query ThoughtsPage {
     allMdx(
-      filter: {fileAbsolutePath: {regex: "/md-thoughts/"}}
-      sort: {fields: frontmatter___date, order: DESC}
+      filter: { fileAbsolutePath: { regex: "/md-thoughts/" } }
+      sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
         frontmatter {

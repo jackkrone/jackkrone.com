@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 
 const AboutMe = () => {
   return (
-    <Layout title="About me">
+    <Layout title="About me" pathName="/aboutme">
       <p>
         I’m a self-taught software engineer and a lifelong learner. I believe
         that being comfortable is probably not correlated with being content,

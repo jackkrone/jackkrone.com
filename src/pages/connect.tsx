@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 
 const Connect = () => {
   return (
-    <Layout title="Connect">
+    <Layout title="Connect" pathName="/connect">
       <div className="d-grid gap-2">
         <div>
           <a

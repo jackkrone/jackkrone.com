@@ -2,9 +2,17 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 
+import solarpunk from '../images/solarpunk.jpg';
+
 const Home = () => {
   return (
-    <Layout home>
+    <Layout
+      pathName="/home"
+      title="Jack Krone"
+      image={solarpunk}
+      description="Jack Krone's portfolio and blog."
+      home
+    >
       <p>
         Welcome to my personal site. I created this site primarily to share
         ideas that are too long for a twitter thread. I often write down useful
