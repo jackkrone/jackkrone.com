@@ -14,17 +14,13 @@ const AboutMe = () => {
         developers.
       </p>
       <p>
-        My educational background is in math and geology. I have three big
+        My educational background is in math and geology. I have two big
         takeaways from school:
       </p>
       <ol>
         <li>
           Thinking clearly and developing expertise are much more difficult than
           most people think.
-        </li>
-        <li>
-          The ability to think on longer timescales (think geologic time) would
-          benefit us all on the personal and societal level.
         </li>
         <li>
           A college education is unnecessary in most cases. A combination of
@@ -52,8 +48,8 @@ const AboutMe = () => {
         approaches simply cut out aspects of our modern lives that do us harm.
       </p>
       <p>
-        So, that’s a little bit about me. If you have any questions, or just
-        want to connect, please don't hesitate to get in{' '}
+        That’s a little bit about me. If you have any questions, or just want to
+        connect, please don't hesitate to get in{' '}
         <Link to="/connect">contact</Link> with me.
       </p>
     </Layout>
