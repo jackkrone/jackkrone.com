@@ -18,7 +18,7 @@ const ThoughtsTemplate = ({ data }) => {
   return (
     <Layout
       title={frontmatter.title}
-      pathName={frontmatter.slug}
+      pathName={`/${frontmatter.slug}`}
       image={image}
       description={frontmatter.description}
     >
