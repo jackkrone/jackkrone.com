@@ -5,46 +5,18 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="124.61875mm"
    height="124.61875mm"
    viewBox="0 0 124.61875 124.61875"
    version="1.1"
-   id="svg8"
-   sodipodi:docname="favicon_dark.svg"
-   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="0"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1280"
-     inkscape:window-height="800"
-     id="namedview31"
-     showgrid="false"
-     inkscape:zoom="0.68593502"
-     inkscape:cx="235.50001"
-     inkscape:cy="235.49999"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg8"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0" />
+   id="svg8">
   <style
      id="style10">
-    path g {
+    path {
       fill: #000000;
     }
     @media (prefers-color-scheme: dark) {
-      path g {
+      path {
         fill: #ffffff;
       }
     }

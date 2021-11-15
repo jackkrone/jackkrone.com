@@ -39,3 +39,48 @@
     color: #128293;
   }
 }
+
+/* Prevent scroll bounce:
+* This only seems to work on chrome and firefox
+* There are multiple options listed here: https://stackoverflow.com/questions/32500876/how-to-prevent-white-space-bounce-after-scrolling-to-the-top-of-the-page-and-t/55396682
+* None work for safari, but this one worked for chrome and firefox and was the most succinct
+*/
+html, body {
+  overscroll-behavior: none;
+}
+
+/* Enable sticky-top for medium and above screen size */
+@media only screen and (min-width: 768px) {
+  #sidebar {
+    height: 100vh;
+  }
+}
+
+/* Set responsive default width for mdx images:
+* 100% width up to and including screen size medium
+* 80% width for screen size large and higher
+*/
+.mdx-image {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  .mdx-image {
+    max-width: 80%;
+  }
+}
+
+/* Give background image responsive height:
+* 35% of viewport width for screens up to medium
+* 20% of viewport width for screens medium and higher
+*/
+#bg-image {
+  height: 35vw;
+  max-height: 325px;
+}
+
+@media only screen and (min-width: 768px) {
+  #bg-image {
+    height: 20vw;
+  }
+}

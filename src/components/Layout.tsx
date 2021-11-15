@@ -1,28 +1,39 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import '../styles/global.css';
 import Sidebar from './Sidebar';
 import Main from './Main';
+import SEO, { SeoProps } from './seo';
 
-interface LayoutProps {
+// I use prop drilling here, hence the extends statement
+// There's possibly a better way to do this
+interface LayoutProps extends SeoProps {
   children?: React.ReactNode;
-  title?: string;
+  home?: boolean;
 }
 
-const Layout = ({ children = null, title = '' }: LayoutProps) => {
+const Layout = ({
+  children = null,
+  home = false,
+  pathName,
+  title,
+  image = '',
+  description = '',
+  lang = 'en',
+}: LayoutProps) => {
   return (
     <>
-      <Helmet>
-        <title>
-          {title}
-          {title && ' | '}Jack Krone
-        </title>
-      </Helmet>
+      <SEO
+        pathName={pathName}
+        title={title}
+        image={image}
+        description={description}
+        lang={lang}
+      />
       <div className="container-fluid">
         <div className="row min-vh-100 flex-column flex-md-row">
           <Sidebar />
-          <Main>
-            {title && <h2 className="mb-3">{title}</h2>}
+          <Main home={home}>
+            {!home && <h1 className="mb-3">{title}</h1>}
             {children}
           </Main>
         </div>

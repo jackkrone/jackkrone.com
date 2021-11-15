@@ -12,12 +12,32 @@ module.exports = {
     description: `This site hosts my personal blog and project portfolio.`,
     author: `Jack Krone`,
     siteUrl: `https://jackkrone.com`,
+    keywords: [
+      `software`,
+      `energy`,
+      `rare earths`,
+      `architecture`,
+      `javascript`,
+    ],
   },
   plugins: [
-    'gatsby-plugin-typescript',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          `G-6WTBPMKK9D`, // Google Analytics
+        ],
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+        },
+      },
+    },
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -39,7 +59,21 @@ module.exports = {
         path: `${__dirname}/src/md-thoughts`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-mdx`, // Setup resource: https://www.youtube.com/watch?v=9B8i_CAON_0
+      options: {
+        extensions: [`.md`, `.mdx`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1320, // specify max width of content container
+            },
+          },
+        ],
+      },
+    },
+    // The following two plugins apparently have to be the last two in the config file or will not function properly
     {
       resolve: `gatsby-plugin-manifest`, // This sets up manifest file for PWA generation, also handles favicon
       options: {
@@ -49,6 +83,9 @@ module.exports = {
         theme_color: `#eeeeee`,
         display: `minimal-ui`,
         icon: `src/images/favicon.svg`,
+        icon_options: {
+          purpose: `maskable`, // https://web.dev/maskable-icon/
+        },
       },
     },
     `gatsby-plugin-offline`, // This caches pages, thereby enabling the web app to run when there is no connection
