@@ -5,19 +5,27 @@ import Layout from '../../components/Layout';
 
 const ThoughtsTemplate = ({ data }) => {
   const { mdx } = data; // data.mdx holds your post data
-  const { frontmatter, html } = mdx;
+  const { frontmatter, body } = mdx;
   const date = new Date(frontmatter.date).toLocaleDateString('default', {
     month: 'long',
     day: 'numeric',
-    year: 'numeric'
+    year: 'numeric',
   });
 
+  // Define image as path
+  const image = frontmatter.featured.childImageSharp.original.src;
+
   return (
-    <Layout title={frontmatter.title}>
+    <Layout
+      title={frontmatter.title}
+      pathName={frontmatter.slug}
+      image={image}
+      description={frontmatter.description}
+    >
       <p>
         <strong>{date}</strong>
       </p>
-      <MDXRenderer>{mdx.body}</MDXRenderer>
+      <MDXRenderer>{body}</MDXRenderer>
     </Layout>
   );
 };
@@ -32,6 +40,14 @@ export const pageQuery = graphql`
         date
         slug
         title
+        description
+        featured {
+          childImageSharp {
+            original {
+              src
+            }
+          }
+        }
       }
     }
   }
