@@ -5,8 +5,7 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  /* About 1/5 down you can see instructions for setting up siteMetaData: https://blog.logrocket.com/set-up-a-typescript-gatsby-app/ */
+  /* About 1/5 down in this resource can see instructions for setting up siteMetaData: https://blog.logrocket.com/set-up-a-typescript-gatsby-app/ */
   siteMetadata: {
     title: `Jack Krone`,
     description: `This site hosts my personal blog and project portfolio.`,
@@ -45,13 +44,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    /* {
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
         path: `${__dirname}/src/md-projects`,
       },
-    }, */
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

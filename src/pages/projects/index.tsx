@@ -1,46 +1,33 @@
-// Turn off projects page for now until I have projects to share
-/*
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
-import PrintByYear from '../../components/PrintByYear';
+import RenderByYear from '../../components/RenderByYear';
 
-const Projects = ({ data }: Record<string, unknown>) => {
-  const projectsList = data.allMarkdownRemark.nodes;
-  console.log(projectsList);
+const Projects = ({ data }) => {
+  const projectsList = data.allMdx.nodes;
 
   return (
-    <Layout title="Projects">
-      <PrintByYear list={projectsList} />
+    <Layout pathName="/projects" title="Projects">
+      <RenderByYear posts={projectsList} />
     </Layout>
   );
 };
 
 export const query = graphql`
   query ProjectsPage {
-    allMarkdownRemark(
+    allMdx(
       filter: { fileAbsolutePath: { regex: "/md-projects/" } }
+      sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
         frontmatter {
-          title
-          slug
           date
+          slug
+          title
         }
-        id
       }
     }
   }
 `;
-
-export default Projects;
-*/
-
-import React from 'react';
-import Layout from '../../components/Layout';
-
-const Projects = () => {
-  return <Layout title="Projects" pathName="/projects" />;
-};
 
 export default Projects;
