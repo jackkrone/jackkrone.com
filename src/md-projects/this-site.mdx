@@ -1,0 +1,63 @@
+---
+slug: this-site
+date: 2021-12-16T16:18:15-06:00
+title: How I built this site (jackkrone.com)
+featured: ../images/this-site/featured.jpg
+description: The how and why behind jackkrone.com and lessons learned along the way.
+---
+
+This site is a modern, pre-rendered website written in javascript. Try some of the following things and see what happens:
+
+- Navigate around the site, and see if your browser ever indicates that it’s loading
+- On the home page, switch to dark mode and refresh the page while keeping an eye on the banner and favicon
+- Turn off your internet connection and see if you can still navigate around the site
+- Check out the mobile site if you’re on desktop (or vice versa)
+
+The site’s features include:
+
+- Fully responsive design
+- Lazy-loaded images
+- Optimized image resolution for different screen sizes
+- Progressive web app functionality with offline navigation
+- Light and dark mode
+- JAMStack setup with GraphQL
+- Google analytics integration
+
+At the time of writing there’s still a few kinks to work out, and I’m sure I'll add some features and/or tweak the layout over time, but things are mostly good to go. I built this site with TypeScript, React, and Gatsby, and I deployed it with Netlify. You might ask, "Why use TypeScript for such a simple site?" Well, I had never used TypeScript before and I wanted to learn how it works. I used Bootstrap 5 for styling, and chose not to use it with react-bootstrap. Since Bootstrap 5 no longer uses jQuery, react-bootstrap is partially redundant. Plus, when I started this project, I already had experience using React style components (using Material UI) so I used this project to learn the authentic form of Bootstrap.
+
+I had multiple false starts on this project. For instance, I considered using a Gatsby [starter](https://www.gatsbyjs.com/starters) but after beginning development on one, was frustrated to discover it was using v3 of Gatsby. I wanted to be using the latest major release. Attempting to migrate the project from v2 to v3 was a headache, so I started the project over, and this time from zero. Literally, with `npm init -y`. I had a heck of a time figuring out all the configuration and adding packages one-by-one, but in the end I may have learned more from the setup alone than from the process of building the site. This gives me confidence to work on more complex projects in the future that don’t or can’t rely on common boilerplate like `create-react-app`. While getting everything set up, I learned to use a number of useful packages and tools including `nvm`, `react-helmet`, and `bootstrap-dark-5` (enables bootstrap with dark mode). I also learned how to persuade ESLint and Prettier to cooperate with eachother with the help of `eslint-plugin-prettier`.
+
+Before I continue, it's worth mentioning that this site’s core functionality is blogging. As noted in the site features list, I used a JAMStack setup. This makes creating new posts extremely easy. Making a new post is as simple as dropping a new markdown file in the appropriate directory and adding a few lines of frontmatter at the top of the file. Frontmatter is just data associated with the post such as the title, date, and slug (URL endpoint). Frontmatter is formatted as a YAML object and placed before any markdown content in the file. It's useful because Gatsby can query it with GraphQL and then use it to programmatically create content on your site _at build time_, including stylized links to posts and the posts themselves. This is a key point to keep in mind. Gatsby is a static-site-generator, meaning that the site contents are generated at build time. Gatsby doesn’t allow you to use GraphQL queries during runtime.
+
+A cool feature of this site is that it uses MDX, which enables the use of JSX inside markdown files. With MDX, you can import react components at the top of a markdown file and use them later on in the file. I created a custom `MdxImage` component to handle images in markdown files. There are a few Gatsby plugins (all forked from `gatsby-remark-images`) that simplify using screen-size-optimized images in markdown files with markdown formatting, but none let you define a max width for individual images. By default these plugins make every image take up the entire width of the container they’re in. That bothered me, so I created a custom react component. In the future, I may write a post specifically about the `MdxImage` component since I know I’m not the only one frustrated with the lack of functionality from `gatsby-remark-images`. In the meantime, you can check out the [source code](https://github.com/jackkrone/jackkrone.com) if your curious how I did it.
+
+Other than the JAMstack setup, I got into the weeds on a number of topics while working on this project and was dogmatic about some things (e.g. preferring margin over padding) to ensure future site maintenance is as straightforward as possible. I realized some interesting things while in the weeds, including that using an svg favicon with built-in dark mode is difficult if not impossible on Safari. If you don't know what I'm saying, take a look at Github's dark mode favicon on Safari versus its dark mode favicon on Chrome. On Chrome, the favicon changes color in dark mode. On Safari, the favicon just gets a white background in dark mode.
+
+Another interesting thing I realized is that TypeScript has a difficult time working with the `Array.prototype.reduce()` method when it's passed an empty object as its initial value. I realized this while creating the display for the Thoughts page and the Projects page. On both pages, the headers are numeric years and each header sits above a list of posts from that given year. The display will only render headers for years in which there were posts. So, for example, if for some reason I only had posts on my site from 2021 and 2005, those would be the only two headers and there would be no intermediary headers for 2006-2020. To create this display, I intially utilized the `Array.prototype.reduce()` method. This approach was unnecessarily complicated and I ended up changing it later on, but the lesson I learned in the process is worth mentioning.
+
+My approach started with a GraphQL query to get all the posts for either the Thoughts or the Projects page. The query would return an array of objects where each object included a post title, date, and slug. From here, I wanted to break this array into sub-arrays, one for each year in which there were posts, and then store the sub-arrays in an object. In case that's confusing, I'll state it another way. I took the return value of the GraphQL query and I used `reduce()` to loop through the array of objects while creating a new object with the following structure:
+
+```
+{
+  2021: [
+    { title: post1title2021, date: post1date2021, slug: post1slug2021 },
+    { title: post2title2021, date: post2date2021, slug: post2slug2021 },
+    … ],
+  2005: [
+    { title: post1title2005, date: post1date2005, slug: post1slug2005 },
+    … ],
+  …
+}
+```
+
+With this object in hand, it's easy to render headers for only the years in which there are posts. For a simplified version of how I used `reduce()` to create this object from an array, check out the answers to [this](https://stackoverflow.com/questions/43008212/reduce-array-of-objects-into-object) question on Stack Overflow. The approach works by passing the method an empty object as an initial value. The `reduce()` method then makes iterative changes to the empty object, ultimately returning a non-empty object. This means that the object has a type of `someObjectShape | {}` or `Partial<someObjectShape>`.
+
+In either case, this causes TypeScript to throw errors. TypeScript looks at the return value of the `reduce()` method and notes that it could be the empty object `{}`, despite the fact that I know it can't be an empty object if the aforementioned GraphQL query is set up correctly. Given that the object could be empty, TypeScript detemines that any values that depends on the properties of the object could be null. This is the root of the problem. TypeScript won't accept the possibility of a null value unless it is explicitly stated as a possibility in a variable's type declaration. This is due to TypeScript's `strictNullChecks` rule, one of the key rules in TypeScript's strict mode.
+
+As far as I know, there’s no way to fix this issue. You could turn off `strictNullChecks` or, for every variable that depends on the object's properties, use optional chaining or append `|null` to the variable's type declaration. None of these options are acceptable solutions though as they undo the benefits of using TypeScript strict mode in the first place. If you want to understand this topic better, check out [this](https://www.reddit.com/r/typescript/comments/bfkncu/when_using_arrayreduce_and_the_initial_value_is/) reddit thread. My advice is to simply avoid using `Array.prototype.reduce()` with an empty object as an initial value. And for that matter, avoid using an empty array as an initial value as well.
+
+So, while I ultimately decided against using the approach discussed above, getting to the bottom of the issue taught me a bit about how TypeScript works. This process of learning by doing is exactly what I set out to do when I began this project. Building this site was an enjoyable challenge, and I hoped to fill it with original thoughts over time.
+
+---
+
+Credits: The inspiration for this site comes from [this](https://training.kalzumeus.com/newsletters/archive/do-not-end-the-week-with-nothing) essay by Patrick McKenzie.
