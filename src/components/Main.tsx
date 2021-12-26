@@ -48,7 +48,7 @@ const Main = ({ children, home = false }: MainProps) => {
           <div className="">
             <div
               style={{ marginTop: '2rem' }}
-              className="d-flex my-0 mx-4 px-md-2 overflow-hidden"
+              className="d-flex my-0 mx-4 px-md-2 px-lg-5 overflow-hidden"
             >
               <div className="container p-0">
                 <h1
@@ -67,7 +67,7 @@ const Main = ({ children, home = false }: MainProps) => {
       )}
       <div
         style={{ marginTop: '2rem' }}
-        className="d-flex flex-column mx-4 px-md-2 overflow-hidden"
+        className="d-flex flex-column mx-4 px-md-2 px-lg-5 overflow-hidden"
       >
         <div className="container p-0">{children}</div>
       </div>
