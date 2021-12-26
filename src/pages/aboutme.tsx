@@ -6,12 +6,9 @@ const AboutMe = () => {
   return (
     <Layout title="About me" pathName="/aboutme">
       <p>
-        I’m a self-taught software engineer and a lifelong learner. I believe
-        that being comfortable is probably not correlated with being content,
-        and that both hard work and rest are psychological needs that can be
-        cultivated. With regard to software, I think most apps will take a
-        web-first approach in the future. That’s good news for javascript
-        developers.
+        I’m a self-taught software engineer and a lifelong learner. With regard
+        to software, I think most apps will take a web-first approach in the
+        future. That’s good news for javascript developers.
       </p>
       <p>
         My educational background is in math and geology. I have two big
@@ -31,20 +28,22 @@ const AboutMe = () => {
         </li>
       </ol>
       <p>
-        I’m interested in energy (nuclear, oil <span>&amp;</span> gas,
-        geothermal, rare earth elements), religion, and entrepreneurship. I’m an
-        optimist. I think we can build a world that supports more prosperity,
-        more energy consumption, more people, more natural beauty, and more
-        aesthetic and affordable cities.
+        Some of my interests include energy (nuclear, oil <span>&amp;</span>{' '}
+        gas, geothermal, rare earth elements), religion, and entrepreneurship.
+        Generally speaking, I’m an optimist - I think we can build a world that
+        supports more prosperity, more energy consumption, more people, more
+        natural beauty, and more aesthetic and affordable cities.
       </p>
       <p>
-        Although I’m technologically progressive, I’m biased towards time-tested
+        While I’m technologically progressive, I’m biased towards time-tested
         ideals. I don’t like the way we’ve built buildings since WWII, I think
         multigenerational families are underrated, and I think we do a
         disservice to ourselves to discount the wisdom of past generations. I
+        believe being comfortable isn't correlated with being content and that
+        both hard work and rest are necessities that we can improve at. I also
         think entrepreneurship is appealing to a large degree because the
-        world’s oldest profession - farming - is a form of entrepreneurship.
-        When it comes to improving well-being, I think some of the highest ROI
+        world’s oldest profession (farming) is a form of entrepreneurship. When
+        it comes to improving well-being, I think some of the highest ROI
         approaches simply cut out aspects of our modern lives that do us harm.
       </p>
       <p>
