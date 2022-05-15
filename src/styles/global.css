@@ -84,3 +84,10 @@ html, body {
     height: 20vw;
   }
 }
+
+/* Use a custom font for displaying formulas */
+.math {
+  font-family: "Times New Roman";
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
