@@ -1,0 +1,41 @@
+---
+slug: methane-vs-carbon-dioxide
+date: 2022-05-15T16:22:00-05:00
+title: 'Methane vs. carbon dioxide: which is worse?'
+featured: ../images/emissions-images/smokestacks-cropped.jpg
+description: Methane is a more potent greenhouse gas than carbon dioxide.  But total carbon dioxide emissions dwarf methane emissions.
+---
+
+import MdxImage from '../components/MdxImage';
+
+<MdxImage fileName="smokestacks.jpg" alt="Smokestacks burning fossil fuels" />
+
+Methane is a more potent greenhouse gas than carbon dioxide. But total carbon dioxide emissions dwarf methane emissions, so efforts to fight climate change focus on reducing carbon dioxide emissions. I wonder if this is the wrong approach. Is it possible that cumulative methane emissions are worse, despite their lower overall levels? To investigate this, we can estimate the relative heating effects of carbon dioxide and methane.
+
+First, we need to define atmospheric heating (i.e. global warming). The atmosphere heats up when more energy enters it than exits it. The rate of energy entering the atmosphere is called _radiative forcing_. Its units are joules/second/square-meter. If you multiply radiative forcing by the surface area of earth's atmosphere, you get the net energy per second entering (or exiting) the atmosphere. A positive number indicates increasing atmospheric energy. This causes warming.
+
+Greenhouse gases increase radiative forcing by trapping energy in the atmosphere. The most common greenhouse gases, sorted by decreasing atmospheric concentration are H<sub>2</sub>O (water vapor), CO<sub>2</sub> (carbon dioxide), CH<sub>4</sub> (methane), N<sub>2</sub>O (nitrous oxide), and O<sub>3</sub> (ozone). To gauge the heating strength of these gases, we can compare their _radiative efficiency_ values. Radiative efficiency is the level of radiative forcing caused by a given gas at a given atmospheric concentration. But carbon dioxide and methane are present in very low concentrations in the atmosphere. So low, (0.04% and 0.00018%) that their atmospheric concentrations grow roughly linearly with each additional emission<sup>[1]</sup>. This means that radiative forcing due to a given greenhouse gas is linearly correlated with emissions. This will simplify our calculations. It means that current levels of carbon dioxide and methane don't affect the heating strength of new emissions.
+
+According to the UN's Intergovernmental Panel on Climate Change, the radiative efficiency (in joules/second/square-meter/parts-per-billion) of carbon dioxide is 1.37x10^-5. Methane is 26.5 times as high, at 3.63x10^-4 ([source](https://www.ipcc.ch/site/assets/uploads/2018/02/WG1AR5_Chapter08_FINAL.pdf)). This means methane's heating effect _per molecule per second_ is 26.5 times as high as that of carbon dioxide. But a molecule of carbon dioxide is 2.75 times the mass of a molecule of methane, so the heating effect _per unit mass per second_ of methane is 73 times that of carbon dioxide<sup>[2]</sup>. According to the UN's International Energy Agency, the value of 2020 methane emissions (from human activities) was approximately [340 million](https://www.iea.org/reports/methane-tracker-2020) metric tons. Carbon dioxide emissions were 92 times as high, at [31.5 billion](https://www.iea.org/articles/global-energy-review-co2-emissions-in-2020) metric tons. Given that heating per unit mass per second of methane is only 73 times that of carbon dioxide, we could say that cumulative methane emissions cause about 20% less heating _per second_ than carbon dioxide<sup>[3]</sup>.
+
+But these gases hang around in the atmosphere for considerably different timeframes. Methane sticks around for about [12 years](https://climateer.substack.com/p/methane-lifetime?s=r), on average. Carbon dioxide is less predictable. It can stick around anywhere from tens to thousands of years. There is no agreed upon average value for the atmospheric lifetime of CO<sub>2</sub>, but it's likely much higher than that of methane<sup>[4]</sup>. If we assume the average atmospheric lifetime of a molecule of CO<sub>2</sub> is 100 years (it could be much higher), then the cumulative 2020 carbon emissions will cause more than 10 times as much heating over time than cumulative 2020 methane emissions<sup>[5]</sup>.
+
+Conclusion: carbon dioxide emissions are _significantly_ worse<sup>[6]</sup>.
+
+<br />
+
+---
+
+**Notes:**
+
+1. The concentration of a gas is <span className="math"><sup>x</sup>&frasl;<sub>(x+c)</sub></span> where <span className="math">x</span> is the number of molecules of the gas in question, and <span className="math">c</span> is the number of all other gas molecules present. It's first derivative is <span className="math"><sup>c</sup>&frasl;<sub>(x+c)<sup>2</sup></sub></span>, which is a multiple of <span className="math"><sup>1</sup>&frasl;<sub>x<sup>2</sup></sub></span> in the limit. That's a much slower rate of growth than linear growth. But the atmosphere (excluding water vapor), is [almost entirely](https://en.wikipedia.org/wiki/Atmosphere_of_Earth) made up of Nitrogen (~78%), Oxygen (~21%), and Argon (~1%). Everything else, including the greenhouse gases we worry about, make up 0.04% of earth's atmosphere. So while atmospheric carbon dioxide and methane levels grow at the rate of <span className="math"><sup>c</sup>&frasl;<sub>(x+c)<sup>2</sup></sub></span>, <span className="math">x</span> is so small compared to <span className="math">c</span> that the growth rate is essentially constant (i.e. linear).<br />In math notation: When <span className="math">x&#8810;c</span>, <span className="math"><sup>c</sup>&frasl;<sub>(x+c)<sup>2</sup></sub> &#8773; <sup>c</sup>&frasl;<sub>c<sup>2</sup></sub> = K</span>,&nbsp;where <span className="math">K</span> is some constant.
+2. [CH<sub>4</sub> molar mass](https://en.wikipedia.org/wiki/Methane): <span className="math">16 <sup>g</sup>&frasl;<sub>mol</sub></span><br />[CO<sub>2</sub> molar mass](https://en.wikipedia.org/wiki/Carbon_dioxide): <span className="math">44 <sup>g</sup>&frasl;<sub>mol</sub></span><br /> <span className="math">26.5&times;(<sup>44</sup>&frasl;<sub>16</sub>) = 73</span>
+3. <span className="math">
+     1-(<sup>73</sup>&frasl;<sub>93</sub>) = 0.22 = 22%
+   </span>
+4. The average atmospheric lifetimes of methane and carbon dioxide are subject to change as their atmospheric concentrations increase.
+5. <span className="math">
+     (<sup>1</sup>&frasl;<sub>1-0.22</sub>)&times;(<sup>100</sup>&frasl;
+     <sub>12</sub>) = 10.42
+   </span>
+6. Granted, it's commonly believed that there is some threshold value of global temperature that the earth can tolerate. The goal of the 2015 Paris Climate Accords is to keep global average temperature from rising [two degrees Celsius](https://www.pbs.org/newshour/show/why-2-degrees-celsius-is-climate-changes-magic-number) above pre-industrial temperatures, and many people believe this means we won't have a planet worth living on anymore if we fail to meet the goal. If we assume a threshold value exists, then there is an extra incentive to reduce heating in the near term, and the cost of the shorter-lived methane emission rises relative to the longer-lived carbon dioxide emission.
